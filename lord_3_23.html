@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>骑马与砍杀2 - 百科全书 - 角色 - 卡欣</title>
+  <link rel="icon" href="https://rebang.open2hub.com/open2hub.ico" type="image/x-icon" sizes="32x32">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  width: 100%; height: 100%;
+  background: #0c0b09;
+  font-family: "Microsoft YaHei", "SimHei", sans-serif;
+  color: #c8b898;
+  overflow: hidden;
+}
+.game-container {
+  width: 100vw; height: 100vh;
+  background: linear-gradient(180deg, #1a1712 0%, #12100e 100%);
+  display: flex; flex-direction: column;
+  border: 2px solid #4a3f2e;
+}
+.header {
+  height: 56px;
+  background: linear-gradient(180deg, #3d3428 0%, #2d2620 100%);
+  border-bottom: 2px solid #5a4d3a;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.header::after {
+  content: ""; position: absolute; bottom: -2px; left: 0; right: 0;
+  height: 1px; background: #8b7355;
+}
+.nav-arrows {
+  position: absolute; left: 16px;
+  display: flex; gap: 8px;
+}
+.arrow {
+  width: 0; height: 0; border-style: solid;
+}
+.arrow.left {
+  border-width: 10px 14px 10px 0;
+  border-color: transparent #8a7d6b transparent transparent;
+}
+.arrow.right {
+  border-width: 10px 0 10px 14px;
+  border-color: transparent transparent transparent #8a7d6b;
+}
+.header h1 {
+  font-size: 24px; color: #e6d2a0;
+  letter-spacing: 6px; font-weight: normal;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+.header-decor {
+  position: absolute;
+  width: 200px; height: 32px;
+  border: 1px solid #6b5a45;
+  border-radius: 16px; top: 12px;
+}
+.header-decor-left { left: 50%; margin-left: -220px; border-right: none; border-radius: 16px 0 0 16px; }
+.header-decor-right { right: 50%; margin-right: -220px; border-left: none; border-radius: 0 16px 16px 0; }
+.search-box {
+  position: absolute; right: 48px;
+  width: 160px; height: 26px;
+  background: #1c1814; border: 1px solid #5a4d3a; border-radius: 3px;
+}
+.search-icon {
+  position: absolute; right: 56px;
+  color: #8a7d6b; font-size: 14px;
+}
+.close-btn {
+  position: absolute; right: 12px; top: 12px;
+  width: 28px; height: 28px;
+  border: 2px solid #8a7d6b; border-radius: 50%;
+  color: #8a7d6b;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; cursor: pointer;
+}
+.breadcrumb {
+  height: 32px;
+  background: #1e1a14; border-bottom: 1px solid #3a3228;
+  display: flex; align-items: center;
+  padding: 0 20px; font-size: 13px; color: #8c7f6b;
+}
+.breadcrumb span { color: #a09078; }
+.breadcrumb .sep { margin: 0 6px; color: #5a5045; }
+
+.main-content {
+  flex: 1; display: flex; overflow: hidden;
+}
+/* 左侧栏 */
+.left-panel {
+  width: 320px;
+  background: #161310;
+  border-right: 1px solid #3a3228;
+  padding: 24px;
+  display: flex; flex-direction: column;
+  text-align: center;
+}
+.star-icon {
+  align-self: flex-start;
+  font-size: 20px; color: #a08050;
+  margin-bottom: 8px;
+}
+.char-title {
+  font-size: 22px; color: #e6d2a0;
+  margin-bottom: 4px;
+}
+.char-subtitle {
+  font-size: 14px; color: #8c7f6b;
+  margin-bottom: 16px;
+}
+.trait-icons {
+  display: flex; gap: 12px;
+  margin-bottom: 16px;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+.trait-icon {
+  width: 48px; height: 28px;
+  border: 1px solid #6b5a3a;
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; background: #2a2218;
+}
+.portrait-large {
+  width: 270px; height: 340px;
+  background: #2a2218;
+  border: 2px solid #6b5a3a;
+  border-radius: 3px;
+  position: relative;
+  margin-bottom: 16px;
+}
+.portrait-large::after {
+  content: "👤";
+  font-size: 120px;
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  opacity: 0.3;
+}
+.skills-title {
+  font-size: 16px; color: #d4b97a;
+  margin-bottom: 8px;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+}
+.skill-box {
+  width: 40px; height: 40px;
+  background: #2a2218;
+  border: 1px solid #4a3f2e;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  position: relative;
+}
+.skill-val {
+  position: absolute; bottom: 1px; right: 2px;
+  font-size: 10px; color: #e6d2a0;
+}
+/* 右侧内容 */
+.right-content {
+  flex: 1; padding: 24px 32px;
+  overflow-y: auto;
+  position: relative;
+}
+.desc-text {
+  font-size: 14px; line-height: 1.8;
+  color: #a09078;
+  margin-bottom: 20px;
+  max-width: 75%;
+}
+.relation-note {
+  position: absolute;
+  right: 32px; top: 24px;
+  width: 220px;
+  border: 1px solid #4a3f2e;
+  padding: 12px;
+  background: #161310;
+}
+.relation-note-title {
+  font-size: 15px; color: #d4b97a;
+  margin-bottom: 8px;
+}
+.relation-note-text {
+  font-size: 13px; line-height: 1.6;
+  color: #a09078;
+}
+.relation-note-date {
+  font-size: 12px; color: #6b5a3a;
+  margin-top: 6px;
+}
+.section {
+  margin-bottom: 24px;
+}
+.section-2 {
+  margin-bottom: 80px;
+}
+.section-title {
+  font-size: 18px; color: #d4b97a;
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #4a3f2e;
+  padding-bottom: 6px;
+}
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-width: 400px;
+}
+.info-item {
+  display: flex; gap: 8px;
+  font-size: 15px;
+}
+.info-label { color: #a09078; }
+.info-value { color: #e6d2a0; }
+.family-box {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 6px;
+  position: absolute;
+  right: 60px; top: 115px;
+}
+.family-label {
+  font-size: 13px; color: #8c7f6b;
+}
+.family-crest {
+  width: 72px; height: 72px;
+  background: #4a2a5a;
+  border: 2px solid #6b5a3a;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px;
+}
+.family-name {
+  font-size: 13px; color: #c8b898;
+}
+.portraits-grid {
+  display: flex; flex-wrap: wrap;
+  gap: 10px;
+}
+.portrait-item {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 4px;
+  width: 72px;
+}
+.portrait-img {
+  width: 64px; height: 64px;
+  background: #2a2218;
+  border: 2px solid #6b5a3a;
+  border-radius: 3px;
+  position: relative;
+}
+.portrait-img::after {
+  content: "👤";
+  font-size: 32px;
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  opacity: 0.3;
+}
+.portrait-name {
+  font-size: 12px; color: #a09078;
+  text-align: center;
+}
+.more-count {
+  display: flex; align-items: center; justify-content: center;
+  width: 64px; height: 64px;
+  font-size: 18px; color: #a09078;
+}
+.portrait-box {
+  display: inline-flex; flex-direction: column; align-items: center;
+  gap: 6px;
+}
+.portrait-img {
+  width: 72px; height: 72px;
+  background: #2a2218;
+  border: 2px solid #6b5a3a;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+.portrait-img::after {
+  content: "👤";
+  font-size: 40px;
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  opacity: 0.4;
+}
+.portrait-name {
+  font-size: 13px; color: #c8b898;
+}
+.family-grid {
+  display: flex; flex-wrap: wrap;
+  gap: 12px;
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  font-size: 13px;
+  color: #c8b898;
+}
+</style>
+</head>
+<body>
+<div class="game-container">
+  <div class="header">
+    <h1>百科全书</h1>
+  </div>
+  <div class="breadcrumb">
+    <span><a href="./home.html">首页</a></span> <span class="sep">\</span> <span>角色</span> <span class="sep">\</span> <span>卡欣</span>
+  </div>
+  <div class="main-content">
+    <div class="left-panel">
+      <div class="char-title">卡欣</div>
+      <div class="char-subtitle">Noble of the 阿塞莱</div>
+      <div class="trait-icons">
+        <div class="trait-icon">善恶</div><div class="trait-icon">胆气</div>
+      </div>
+      <div class="portrait-large"></div>
+      <div class="skills-title">技能</div>
+      <div class="skills-grid">
+        <div class="skill-box">骑术<span class="skill-val">217</span></div><div class="skill-box">长杆<span class="skill-val">198</span></div><div class="skill-box">统御<span class="skill-val">168</span></div><div class="skill-box">战术<span class="skill-val">175</span></div><div class="skill-box">跑动<span class="skill-val">135</span></div><div class="skill-box">投掷<span class="skill-val">96</span></div><div class="skill-box">管理<span class="skill-val">109</span></div><div class="skill-box">单手<span class="skill-val">168</span></div><div class="skill-box">双手<span class="skill-val">145</span></div><div class="skill-box">弓<span class="skill-val">66</span></div><div class="skill-box">弩<span class="skill-val">26</span></div><div class="skill-box">锻造<span class="skill-val">48</span></div><div class="skill-box">侦察<span class="skill-val">156</span></div><div class="skill-box">流氓习气<span class="skill-val">76</span></div><div class="skill-box">魅力<span class="skill-val">126</span></div><div class="skill-box">交易<span class="skill-val">38</span></div><div class="skill-box">医术<span class="skill-val">89</span></div><div class="skill-box">工程<span class="skill-val">55</span></div><div class="skill-box">水兵<span class="skill-val">14</span></div><div class="skill-box">大副<span class="skill-val">14</span></div><div class="skill-box">船长<span class="skill-val">10</span></div>
+      </div>
+    </div>
+    <div class="right-content">
+      <div class="desc-text">
+        {hero.描述}
+      </div>
+      <div class="family-box">
+        <div class="family-label">家族</div>
+        <div class="family-crest"></div>
+        <div class="family-name">巴努·萨马勒</div>
+      </div>
+      <div class="section section-2">
+        <div class="section-title">信息</div>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">文化：</span><span class="info-value">阿塞莱</span></div>
+          <div class="info-item"><span class="info-label">年龄：</span><span class="info-value">24</span></div>
+          <div class="info-item"><span class="info-label">职业：</span><span class="info-value">Lord</span></div>
+          <div class="info-item"><span class="info-label">关系：</span><span class="info-value">0</span></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-title">好友</div>
+        <div class="family-grid">
+          <div class="portrait-box"><a href="./CharacterObject_1876.html"><div class="portrait-img"></div></a><div class="portrait-name">秘密之手的苏帷</div></div><div class="portrait-box"><a href="./CharacterObject_1877.html"><div class="portrait-img"></div></a><div class="portrait-name">秘密之手的瓦叙罗普斯</div></div><div class="portrait-box"><a href="./CharacterObject_1878.html"><div class="portrait-img"></div></a><div class="portrait-name">秘密之手的帕得摩斯</div></div><div class="portrait-box"><a href="./CharacterObject_1879.html"><div class="portrait-img"></div></a><div class="portrait-name">秘密之手的阿尔提门德洛斯</div></div><div class="portrait-box"><a href="./lord_1_1.html"><div class="portrait-img"></div></a><div class="portrait-name">卢孔</div></div><div class="portrait-box"><a href="./CharacterObject_3158.html"><div class="portrait-img"></div></a><div class="portrait-name">然达那</div></div><div class="portrait-box"><a href="./CharacterObject_3159.html"><div class="portrait-img"></div></a><div class="portrait-name">戈里戈斯</div></div><div class="portrait-box"><a href="./CharacterObject_3161.html"><div class="portrait-img"></div></a><div class="portrait-name">塔洛斯</div></div><div class="portrait-box"><a href="./CharacterObject_3160.html"><div class="portrait-img"></div></a><div class="portrait-name">得阿索拉</div></div><div class="portrait-box"><a href="./lord_1_1_2.html"><div class="portrait-img"></div></a><div class="portrait-name">得坎提娅</div></div><div class="portrait-box"><a href="./lord_1_31.html"><div class="portrait-img"></div></a><div class="portrait-name">佐安娜</div></div><div class="portrait-box"><a href="./lord_1_411.html"><div class="portrait-img"></div></a><div class="portrait-name">亚里翁</div></div><div class="portrait-box"><a href="./lord_1_1_1.html"><div class="portrait-img"></div></a><div class="portrait-name">苏萨达</div></div><div class="portrait-box"><a href="./lord_1_41.html"><div class="portrait-img"></div></a><div class="portrait-name">阿科耳</div></div><div class="portrait-box"><a href="./lord_1_2.html"><div class="portrait-img"></div></a><div class="portrait-name">泽洛西卡</div></div><div class="portrait-box"><a href="./lord_1_21.html"><div class="portrait-img"></div></a><div class="portrait-name">阿斯居戎</div></div><div class="portrait-box"><a href="./CharacterObject_1866.html"><div class="portrait-img"></div></a><div class="portrait-name">暗影之子的鲁特瓦尔</div></div><div class="portrait-box"><a href="./CharacterObject_1867.html"><div class="portrait-img"></div></a><div class="portrait-name">暗影之子的加赖斯</div></div><div class="portrait-box"><a href="./CharacterObject_1864.html"><div class="portrait-img"></div></a><div class="portrait-name">暗影之子的杜瓦因</div></div><div class="portrait-box"><a href="./CharacterObject_1865.html"><div class="portrait-img"></div></a><div class="portrait-name">暗影之子的达里姆</div></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-title">敌人</div>
+        <div class="family-grid">
+          <div class="portrait-box"><a href="./CharacterObject_3282.html"><div class="portrait-img"></div></a><div class="portrait-name">塞拉格</div></div><div class="portrait-box"><a href="./lord_5_17_1.html"><div class="portrait-img"></div></a><div class="portrait-name">布丽甘</div></div><div class="portrait-box"><a href="./lord_5_17.html"><div class="portrait-img"></div></a><div class="portrait-name">阿拉德维尔</div></div><div class="portrait-box"><a href="./CharacterObject_3281.html"><div class="portrait-img"></div></a><div class="portrait-name">伊娅拉</div></div><div class="portrait-box"><a href="./lord_5_21_1.html"><div class="portrait-img"></div></a><div class="portrait-name">贝阿塔格</div></div><div class="portrait-box"><a href="./lord_5_21_2.html"><div class="portrait-img"></div></a><div class="portrait-name">蒂尔谢</div></div><div class="portrait-box"><a href="./lord_5_21.html"><div class="portrait-img"></div></a><div class="portrait-name">卡费德</div></div><div class="portrait-box"><a href="./CharacterObject_3280.html"><div class="portrait-img"></div></a><div class="portrait-name">凯莉斯</div></div><div class="portrait-box"><a href="./lord_SE9_c2.html"><div class="portrait-img"></div></a><div class="portrait-name">狄亚丝卡</div></div><div class="portrait-box"><a href="./CharacterObject_3214.html"><div class="portrait-img"></div></a><div class="portrait-name">得诺斯</div></div><div class="portrait-box"><a href="./lord_SE9_c1.html"><div class="portrait-img"></div></a><div class="portrait-name">帕加里俄斯</div></div><div class="portrait-box"><a href="./lord_SE9_s.html"><div class="portrait-img"></div></a><div class="portrait-name">伊翁娜</div></div><div class="portrait-box"><a href="./lord_SE9_l.html"><div class="portrait-img"></div></a><div class="portrait-name">萨特洛斯</div></div><div class="portrait-box"><a href="./CharacterObject_3213.html"><div class="portrait-img"></div></a><div class="portrait-name">罗萨齐娅</div></div><div class="portrait-box"><a href="./CharacterObject_1888.html"><div class="portrait-img"></div></a><div class="portrait-name">贾瓦勒的塔格</div></div><div class="portrait-box"><a href="./CharacterObject_1891.html"><div class="portrait-img"></div></a><div class="portrait-name">贾瓦勒的苏勒</div></div><div class="portrait-box"><a href="./CharacterObject_1889.html"><div class="portrait-img"></div></a><div class="portrait-name">贾瓦勒的米突尼斯</div></div><div class="portrait-box"><a href="./CharacterObject_1890.html"><div class="portrait-img"></div></a><div class="portrait-name">贾瓦勒的法里姆</div></div><div class="portrait-box"><a href="./lord_1_63_3.html"><div class="portrait-img"></div></a><div class="portrait-name">厄利狄勒娅</div></div><div class="portrait-box"><a href="./lord_1_74.html"><div class="portrait-img"></div></a><div class="portrait-name">扎喀尼斯</div></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-title">家族</div>
+        <div class="family-grid">
+          <div class="portrait-box"><div class="portrait-name">Spouse</div><a href="./lord_3_23_1.html"><div class="portrait-img"></div></a><div class="portrait-name">苏凯娜</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
