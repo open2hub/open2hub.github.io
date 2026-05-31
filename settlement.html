@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>百科全书 - 吕卡隆</title>
+<title>骑马与砍杀2 - 百科全书 - 定居点 - {settlement.name}</title>
   <link rel="icon" href="https://rebang.open2hub.com/open2hub.ico" type="image/x-icon" sizes="32x32">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -115,7 +115,7 @@ html, body {
   gap: 8px; font-size: 15px;
 }
 .stat-icon {
-  width: 24px; height: 24px;
+  width: 80px; height: 24px;
   display: flex; align-items: center; justify-content: center;
   font-size: 16px;
 }
@@ -131,7 +131,6 @@ html, body {
 .culture-val { color: #e6d2a0; }
 .settle-img {
   width: 260px; height: 340px;
-  background: linear-gradient(180deg, #87CEEB 0%, #5a7a8a 40%, #4a5a6a 100%);
   border: 2px solid #6b5a3a;
   position: relative;
   overflow: hidden;
@@ -142,7 +141,6 @@ html, body {
   background: linear-gradient(180deg, transparent 0%, #3a3228 100%);
 }
 .settle-img::after {
-  content: "🏰";
   font-size: 80px;
   position: absolute; bottom: 20%; left: 50%; transform: translateX(-50%);
   opacity: 0.4;
@@ -281,6 +279,15 @@ html, body {
   display: flex; flex-wrap: wrap;
   gap: 12px;
 }
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  font-size: 13px;
+  color: #c8b898;
+}
 </style>
 </head>
 <body>
@@ -289,66 +296,52 @@ html, body {
     <h1>百科全书</h1>
   </div>
   <div class="breadcrumb">
-    <span>首页</span> <span class="sep">\</span> <span>定居点</span> <span class="sep">\</span> <span>吕卡隆</span>
+    <span><a href="./home.html">首页</a></span> <span class="sep">\</span> <span>定居点</span> <span class="sep">\</span> <span>{settlement.name}</span>
   </div>
   <div class="main-content">
     <div class="left-panel">
-      <div class="settle-title">吕卡隆</div>
+      <div class="settle-title">{settlement.name}</div>
       <div class="stats-grid">
-        <div class="stat-item"><span class="stat-icon">🏰</span><span class="stat-val">3</span></div>
-        <div class="stat-item"><span class="stat-icon">💰</span><span class="stat-val">3800</span></div>
-        <div class="stat-item"><span class="stat-icon">👥</span><span class="stat-val">238</span></div>
-        <div class="stat-item"><span class="stat-icon">🍞</span><span class="stat-val">61</span></div>
-        <div class="stat-item"><span class="stat-icon">⚔</span><span class="stat-val">263</span></div>
-        <div class="stat-item"><span class="stat-icon">🛡</span><span class="stat-val">61</span></div>
-        <div class="stat-item"><span class="stat-icon">🏇</span><span class="stat-val">389</span></div>
+        <div class="stat-item"><span class="stat-icon">城墙等级：</span><span class="stat-val">{}</span></div>
+        <div class="stat-item"><span class="stat-icon">繁荣度：</span><span class="stat-val">{settlement.prosperity}</span></div>
+        <div class="stat-item"><span class="stat-icon">驻军：</span><span class="stat-val">{settlement.garrison}</span></div>
+        <div class="stat-item"><span class="stat-icon">忠诚度：</span><span class="stat-val">{settlement.loyalty}</span></div>
+        <div class="stat-item"><span class="stat-icon">民兵：</span><span class="stat-val">{settlement.militia}</span></div>
+        <div class="stat-item"><span class="stat-icon">治安度：</span><span class="stat-val">{settlement.security}</span></div>
+        <div class="stat-item"><span class="stat-icon">食物：</span><span class="stat-val">{settlement.foodStocks}</span></div>
       </div>
       <div class="culture-row">
-        <span class="culture-label">文化：</span><span class="culture-val">帝国</span>
+        <span class="culture-label">文化：</span><span class="culture-val">{settlement.culture}</span>
       </div>
       <div class="settle-img"></div>
     </div>
     <div class="right-content">
       <div class="desc-text">
-        吕卡隆这座天然要塞位于巍峨的奥尼石山向外突出的一处缓坡之上。在帝国征服的最后几年，帕拉部落同帝国协商，进行了和平的合并，结果他们的家园又被叛军首领革图夺走。接踵而至的围城战仅仅是吕卡隆在接下来的几个世纪中屡遭围攻的第一次，因为该城周边有着丰富的银矿脉，任何想在内战中攫取权力的皇位觊觎者都会盯上这里。甚至有人传言，居住在石山顶上的秃鹫已经享用过卡拉迪亚大陆上的每一种民族。
+        {settlement.描述}
       </div>
       <div class="section">
         <div class="section-title">所有者</div>
         <div class="family-grid">
           <div class="portrait-box">
             <div class="portrait-img"></div>
-            <div class="portrait-name">俄斯提科斯</div>
+            <div class="portrait-name">{settlement.owner.name}</div>
           </div>
           <div class="portrait-box">
             <div class="portrait-img"></div>
-            <div class="portrait-name">阿耳戈洛斯</div>
+            <div class="portrait-name">{settlement.clan}</div>
           </div>
         </div>
       </div>
       <div class="section">
         <div class="section-title">要人角色</div>
         <div class="family-grid">
-          <div class="portrait-box">
-            <div class="portrait-img"></div>
-            <div class="portrait-name">俄斯提科斯</div>
-          </div>
-          <div class="portrait-box">
-            <div class="portrait-img"></div>
-            <div class="portrait-name">阿耳戈洛斯</div>
-          </div>
+          {settlement.notables}
         </div>
       </div>
       <div class="section">
         <div class="section-title">村庄</div>
         <div class="family-grid">
-          <div class="portrait-box">
-            <div class="portrait-img"></div>
-            <div class="portrait-name">俄斯提科斯</div>
-          </div>
-          <div class="portrait-box">
-            <div class="portrait-img"></div>
-            <div class="portrait-name">阿耳戈洛斯</div>
-          </div>
+          {settlement.villages}
         </div>
       </div>
     </div>
