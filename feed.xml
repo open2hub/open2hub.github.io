@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
     <title>Open2Hub</title>
-    <link href="https://github.com/open2hub/open2hub.github.io/feed.xml" rel="self" />
-    <link href="https://github.com/open2hub/open2hub.github.io" />
+    <link href="https://open2hub.github.io/feed.xml" rel="self" />
+    <link href="https://open2hub.github.io" />
     <updated>2026-06-02T22:19:13+08:00</updated>
     <author>
         <name>ZhaoChen</name>
     </author>
-    <id>https://github.com/open2hub/open2hub.github.io</id>
+    <id>https://open2hub.github.io</id>
 
     <entry>
         <title>测试</title>
         <author>
             <name>ZhaoChen</name>
         </author>
-        <link href="https://github.com/open2hub/open2hub.github.io/ce-shi.html"/>
-        <id>https://github.com/open2hub/open2hub.github.io/ce-shi.html</id>
+        <link href="https://open2hub.github.io/ce-shi.html"/>
+        <id>https://open2hub.github.io/ce-shi.html</id>
 
         <updated>2026-06-02T22:19:13+08:00</updated>
             <summary type="html">
