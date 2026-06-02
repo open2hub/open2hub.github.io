@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
     <title>Open2Hub</title>
-    <link href="https://open2hub.github.io/feed.xml" rel="self" />
-    <link href="https://open2hub.github.io" />
-    <updated>2026-06-02T22:19:13+08:00</updated>
+    <link href="https://ai.open2hub.com/feed.xml" rel="self" />
+    <link href="https://ai.open2hub.com" />
+    <updated>2026-06-02T22:50:47+08:00</updated>
     <author>
         <name>ZhaoChen</name>
     </author>
-    <id>https://open2hub.github.io</id>
+    <id>https://ai.open2hub.com</id>
 
+    <entry>
+        <title>测试2</title>
+        <author>
+            <name>ZhaoChen</name>
+        </author>
+        <link href="https://ai.open2hub.com/ce-shi-2.html"/>
+        <id>https://ai.open2hub.com/ce-shi-2.html</id>
+
+        <updated>2026-06-02T22:50:47+08:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    测试2
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>测试2</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>测试</title>
         <author>
             <name>ZhaoChen</name>
         </author>
-        <link href="https://open2hub.github.io/ce-shi.html"/>
-        <id>https://open2hub.github.io/ce-shi.html</id>
+        <link href="https://ai.open2hub.com/ce-shi.html"/>
+        <id>https://ai.open2hub.com/ce-shi.html</id>
 
         <updated>2026-06-02T22:19:13+08:00</updated>
             <summary type="html">
