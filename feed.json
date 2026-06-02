@@ -1,0 +1,27 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Open2Hub",
+    "description": "",
+    "home_page_url": "https://github.com/open2hub/open2hub.github.io",
+    "feed_url": "https://github.com/open2hub/open2hub.github.io/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "ZhaoChen"
+    },
+    "items": [
+        {
+            "id": "https://github.com/open2hub/open2hub.github.io/ce-shi.html",
+            "url": "https://github.com/open2hub/open2hub.github.io/ce-shi.html",
+            "title": "测试",
+            "summary": "下面是核心要点，请完善这个会邀，议题用表格列出：决策委员会9月会议 3月9日14点开始，每个议题20分钟 议题： 1、小汽车采购预算申请 张三 2、座椅采购预算申请 李四 4、员工加班制度修改确认 王五",
+            "content_html": "<p>下面是核心要点，请完善这个会邀，议题用表格列出：决策委员会9月会议 3月9日14点开始，每个议题20分钟 议题： 1、小汽车采购预算申请 张三 2、座椅采购预算申请 李四 4、员工加班制度修改确认 王五</p>",
+            "author": {
+                "name": "ZhaoChen"
+            },
+            "tags": [
+            ],
+            "date_published": "2026-06-02T22:19:13+08:00",
+            "date_modified": "2026-06-02T22:19:13+08:00"
+        }
+    ]
+}
