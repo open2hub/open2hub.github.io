@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="https://ai.open2hub.com/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="https://blog.open2hub.com/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url>
-<loc>https://ai.open2hub.com/</loc>
-</url>
-<url>
-<loc>https://ai.open2hub.com/ce-shi-2.html</loc>
-<lastmod>2026-06-02T22:50:47+08:00</lastmod>
-</url>
-<url>
-<loc>https://ai.open2hub.com/ce-shi.html</loc>
-<lastmod>2026-06-02T22:19:13+08:00</lastmod>
+<loc>https://blog.open2hub.com/</loc>
 </url>
 </urlset>
