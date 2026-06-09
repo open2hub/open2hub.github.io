@@ -3,7 +3,7 @@
     <title>Open2Hub</title>
     <link href="https://blog.open2hub.com/feed.xml" rel="self" />
     <link href="https://blog.open2hub.com" />
-    <updated>2026-06-09T20:34:37+08:00</updated>
+    <updated>2026-06-09T20:40:04+08:00</updated>
     <author>
         <name>赵大宝</name>
     </author>
@@ -16,6 +16,9 @@
         </author>
         <link href="https://blog.open2hub.com/mai-a-mi-yong-zhuang-zhouyang-guanghai-lang-yu-shi-shang-de-quan-qiu-sheng-yan.html"/>
         <id>https://blog.open2hub.com/mai-a-mi-yong-zhuang-zhouyang-guanghai-lang-yu-shi-shang-de-quan-qiu-sheng-yan.html</id>
+            <category term="秀场"/>
+            <category term="泳装"/>
+            <category term="娱乐"/>
 
         <updated>2026-06-09T20:30:25+08:00</updated>
             <summary type="html">
@@ -116,7 +119,7 @@
         </content>
     </entry>
     <entry>
-        <title>一款玩了快十年的游戏，愿您长寿</title>
+        <title>一款玩了快十几年的游戏，愿您长寿</title>
         <author>
             <name>赵大宝</name>
         </author>
