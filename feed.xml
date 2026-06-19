@@ -3,7 +3,7 @@
     <title>Open2Hub</title>
     <link href="https://blog.open2hub.com/feed.xml" rel="self" />
     <link href="https://blog.open2hub.com" />
-    <updated>2026-06-19T23:40:56+08:00</updated>
+    <updated>2026-06-20T00:09:27+08:00</updated>
     <author>
         <name>赵大宝</name>
     </author>
@@ -18,6 +18,7 @@
         <id>https://blog.open2hub.com/fei-zhu-liu-ren-wu-ji-lu-pian-up-zhumo-de-si-ji-xu-shi-fu.html</id>
         <media:content url="https://blog.open2hub.com/media/posts/19/3655c5b39f194126d1fd6db75944bba41ed01f79-1.jpg" medium="image" />
             <category term="纪录片"/>
+            <category term="人物"/>
             <category term="BiliBili"/>
 
         <updated>2026-06-19T22:59:04+08:00</updated>
